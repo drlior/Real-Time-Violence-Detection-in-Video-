@@ -12,7 +12,8 @@ import json
 
 target = "http://127.0.0.1:3091"
 urls = target + '/api/fight/'
-ws = open('hdfight.mp4', 'rb')#.read()
+# ws = open('hdfight.mp4', 'rb')#.read()
+ws = open('input/violence1.avi', 'rb')#.read()
 files = {'file': ws}
 info = {'gps':'12344333','id':'11977354',"time-stamp":'3240234049820349'}
 millis = int(round(time.time() * 1000))

@@ -1,5 +1,7 @@
 import numpy as np
+import tensorflow
 from skimage.transform import resize
+from tensorflow import keras
 
 
 def video_mamonreader(cv2,filename):
@@ -60,18 +62,20 @@ def mamon_videoFightModel(tf,wight='mamon-videofight100.hdf5'):
 
 
 def mamon_videoFightModel2(tf,wight='mamonbest947oscombo.hdfs'):
-    layers = tf.contrib.keras.layers
-    models = tf.contrib.keras.models
-    losses = tf.contrib.keras.losses
-    optimizers = tf.contrib.keras.optimizers
-    metrics = tf.contrib.keras.metrics
+    #layers = tf.contrib.keras.layers
+    layers = keras.layers
+    #models = tf.contrib.keras.models
+    models = keras.models
+    losses = keras.losses
+    optimizers = keras.optimizers
+    metrics = keras.metrics
     num_classes = 2
     cnn = models.Sequential()
-    #cnn.add(base_model)
+    #cnn.add(base_model
 
     input_shapes=(160,160,3)
     np.random.seed(1234)
-    vg19 = tf.keras.applications.vgg19.VGG19
+    vg19 = keras.applications.vgg19.VGG19
     base_model = vg19(include_top=False,weights='imagenet',input_shape=(160, 160,3))
     # Freeze the layers except the last 4 layers
     #for layer in base_model.layers:
